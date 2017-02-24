@@ -186,6 +186,7 @@ func (t *SimpleChaincode) readAsset(stub shim.ChaincodeStubInterface, args []str
         return nil, errors.New("Asset does not exist!")
     }
     assetID = *stateIn.AssetID
+    fmt.Println(string(assetID))
         // Get the state from the ledger
     assetBytes, err:= stub.GetState(assetID)
     if err != nil  || len(assetBytes) ==0{
